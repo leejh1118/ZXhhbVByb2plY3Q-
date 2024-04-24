@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import Main from "./component/main/Main.jsx";
 import RoomA from "./component/roomA/RoomA.jsx";
 import RoomB from "./component/roomB/RoomB.jsx";
 import RoomC from "./component/roomC/RoomC.jsx";
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Main/>}></Route>
         <Route path="/room-a/*" element={<RoomA />}></Route>
         <Route path="/room-b/*" element={<RoomB />}></Route>
         <Route path="/room-c/*" element={<RoomC />}></Route>
