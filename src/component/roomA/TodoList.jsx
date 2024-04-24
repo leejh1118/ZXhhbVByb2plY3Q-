@@ -47,12 +47,11 @@ export default function todoList() {
 
 
   return (
-    <>
-      <div className="todo-container">
+      <div className="todo_container">
         <h1>Todo</h1>
         <div id="inputField">
           <input type="text" id="todoInput" placeholder="할 일 추가하기"  value={input} onChange={(e) => handleInput(e.target.value)} onKeyDown={(e) => e.keyCode == 13 && handleList()}/>
-          <button type="button" class="btn addBtn" onClick={() => handleList()}>
+          <button type="button" className="btn addBtn" onClick={() => handleList()}>
             <span></span>
             <span></span>
           </button>
@@ -60,7 +59,7 @@ export default function todoList() {
         <ul id="todoList">
           
         </ul>
-        <table class="table" id="table">
+        <table className="table" id="table">
           <colgroup>
             <col style={{width:"33%"}}/>
             <col style={{width:"33%"}}/>
@@ -88,9 +87,5 @@ export default function todoList() {
           </tbody>
         </table>
       </div>
-      <Routes>
-        <Route path="/first" element={<h1>1번</h1>}></Route>
-      </Routes>
-    </>
   );
 }

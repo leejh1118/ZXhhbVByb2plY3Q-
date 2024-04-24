@@ -1,0 +1,26 @@
+#roomB_wrap h1 {
+    text-align: center;
+    color: yellow;
+    text-shadow: 0 3px 10px #900;
+}
+
+#roomB_wrap div.imgBox {
+    width: 100%;
+    padding: 2em 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 2em;
+}
+
+#roomB_wrap div.imgBox img {
+    width: 300px;
+}
+
+#roomB_wrap div.imgBox img#img_rd {
+    content: url(/public/resources/img/rubber_duck.jpg);
+}
+
+#roomB_wrap div.imgBox img#img_rds {
+    content: url(/public/resources/img/rubber_duck_side.png);
+}

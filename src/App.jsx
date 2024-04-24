@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Main from "./component/main/Main.jsx";
 import RoomA from "./component/roomA/RoomA.jsx";
 import RoomB from "./component/roomB/RoomB.jsx";
@@ -17,15 +17,24 @@ import RoomM from "./component/roomM/RoomM.jsx";
 
 
 function App() {
-  const [count, setCount] = useState(1);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const toPath = () => {
+    navigate(-1);
+  }
 
   return (
     <>
+      {location.pathname != "/" &&
+        <div style={{paddingLeft: "2em", paddingTop: "1em"}}>
+          <a onClick={() => toPath()} style={{cursor: "pointer"}}>← Back</a>
+        </div>
+      }
       <Routes>
         <Route path="/" element={<Main/>}></Route>
         <Route path="/room-a/*" element={<RoomA />}></Route>
-        <Route path="/room-b/*" element={<RoomB />}></Route>
+        <Route path="/room-b" element={<RoomB />}></Route>
         <Route path="/room-c/*" element={<RoomC />}></Route>
         <Route path="/room-d/*" element={<RoomD />}></Route>
         <Route path="/room-e/*" element={<RoomE />}></Route>

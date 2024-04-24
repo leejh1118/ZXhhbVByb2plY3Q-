@@ -1,0 +1,49 @@
+#main_wrap {
+    width: 100%;
+    background-color: #f0efe7;
+}
+
+#main_wrap #doors {
+    min-width: 200px;
+    max-width: 816px;
+    width: 100vw;
+    padding: 2em;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2.5em 4em;
+}
+
+#main_wrap #doors a {
+    height: 150px;
+    flex-basis: 6em;
+    text-align: center;
+    background: url(/public/resources/img/door.jpg) top;
+    background-size: cover;
+    padding-top: 1em;
+    box-shadow: 0 3px 5px 2px #888;
+    transition: ease 0.3s all;
+}
+
+#main_wrap #doors a:hover {
+    box-shadow: 0 14px 18px 2px #333;
+    transform: translateY(-3px);
+}
+
+#main_wrap #doors a:active {
+    background-blend-mode: multiply;
+    background-color: #888;
+}
+
+#main_wrap #doors a:active span {
+    color: #888;
+}
+
+#main_wrap #doors a span {
+    color: #fff;
+    background-color: black;
+    padding: 4px 7px;
+    transition: ease 0.3s all;
+}
