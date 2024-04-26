@@ -27,8 +27,7 @@ export default function RoomD() {
   useEffect(() => {
     getList();
   }, [])
-
-
+  console.log(list[0]);
   return (
     <>
       <link rel="stylesheet" href="/resources/css/roomD.css"></link>
@@ -37,6 +36,15 @@ export default function RoomD() {
         <div className="page-title">
               <div className="container">
                   <h3>리 스 트</h3>
+            </div>
+            <div className='select-box'>
+                <select className='btn btn-dark' onChange={handleChangeLang}>
+                  {langList.map((i,idx)=>{
+                    return (
+                      <option key={"option" + idx} value={i}>{i}</option>
+                    )
+                  })}
+                </select>
               </div>
           </div>
 
@@ -53,15 +61,7 @@ export default function RoomD() {
                   placeholder="검색어를 입력해주세요."
                   onChange={handleSearch}/>
                 {/* <button type="submit" className="btn btn-dark">검색</button> */}
-                <div>
-                <select className='btn btn-dark' onChange={handleChangeLang}>
-                  {langList.map((i,idx)=>{
-                    return (
-                      <option key={"option" + idx} value={i}>{i}</option>
-                    )
-                  })}
-                </select>
-              </div>
+                
               </div>
               
                   </div>
@@ -91,16 +91,15 @@ export default function RoomD() {
                       <td>{idx+1 }</td>
                       <th>
                         {lang == "eng" ? 
-                          <a href="#!">{i.name.official }</a>
+                          <a href={`https://restcountries.com/v3.1/name/${i.name.official }`}>{i.name.official }</a>
                         : 
-                          <a href="#!">{i.translations[lang].official }</a>
+                          <a href={`https://restcountries.com/v3.1/name/${i.name.official }`}>{i.translations[lang].official }</a>
                         }
                     </th>
                     <td>{i.population.toLocaleString()}</td>
                 </tr>
                   )
                 }) }
-    {/* object.name, object['name'] */}
                     
                      
                       </tbody>

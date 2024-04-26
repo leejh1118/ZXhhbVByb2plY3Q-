@@ -181,7 +181,15 @@
   min-width: 250px;
   width: 100%;
   margin: 0 auto;
+  
 }
+
+.select-box{
+  position: fixed;
+  top: 50px;
+  right: 80px;
+}
+
 #roomd_wrap .blind {
   position: absolute;
   overflow: hidden;
