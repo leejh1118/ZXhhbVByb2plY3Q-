@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import '../../../public/resources/css/TodoList.css'
 import { useEffect, useState } from 'react';
 
 export default function todoList() {
@@ -47,6 +46,8 @@ export default function todoList() {
 
 
   return (
+    <>
+      <link rel="stylesheet" href="/resources/css/TodoList.css"></link>
       <div className="todo_container">
         <h1>Todo</h1>
         <div id="inputField">
@@ -87,5 +88,6 @@ export default function todoList() {
           </tbody>
         </table>
       </div>
+      </>
   );
 }
