@@ -79,7 +79,7 @@ export default function RoomC_init_lines(props) {
     <>
       { !loading &&
         <>
-          <div className="console_line">
+          <div id="init_input_wrap" className="console_line">
             <span className="console_line_word">{initPw}</span>
             <span className="console_line_word">{fakeText}</span>
             <span className="console_line_word">_</span>
