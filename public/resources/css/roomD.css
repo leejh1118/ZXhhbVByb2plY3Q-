@@ -1,7 +1,13 @@
+
+::-webkit-scrollbar {
+    display: none;
+  }
+
 #roomd_wrap table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 #roomd_wrap section.notice {
   padding: 2em 0;
 }
@@ -21,6 +27,7 @@
   background-color: #f9f7f9;
 }
 #roomd_wrap #board-search .search-window .search-wrap {
+  display: flex;
   position: relative;
 /*   padding-right: 124px; */
   margin: 0 auto;
@@ -39,8 +46,15 @@
   outline: 0;
   border-width: 1px;
 }
-#roomd_wrap #board-search .search-window .search-wrap .btn {
+
+#roomd_wrap #board-search .search-window .search-wrap div {
   position: absolute;
+  bottom: 0px;
+  right: -200px;
+}
+
+#roomd_wrap #board-search .search-window .search-wrap .btn {
+  /* position: absolute; */
   right: 0;
   top: 0;
   bottom: 0;
@@ -65,9 +79,6 @@
 }
 #roomd_wrap .board-table a:hover {
   text-decoration: underline;
-}
-#roomd_wrap .board-table th {
-  text-align: center;
 }
 
 #roomd_wrap .board-table .th-num {
@@ -94,7 +105,7 @@
   padding-left: 28px;
   padding-right: 14px;
   border-top: 1px solid #e7e7e7;
-  text-align: left;
+  /* text-align: left; */
 }
 
 #roomd_wrap .board-table tbody th p{
@@ -178,4 +189,9 @@
   margin: -1px;
   width: 1px;
   height: 1px;
+}
+
+.board-table th,
+.board-table td {
+    width: 33.3%; /* 각 셀의 너비를 33.3%로 설정 */
 }

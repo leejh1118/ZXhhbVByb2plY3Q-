@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import '../../../public/resources/css/roomD.css';
+// import '/public/resources/css/roomD.css';
 import { useEffect } from 'react';
 
 export default function RoomD() {
   const [list, setList] = useState([]);
+  const [lang, setLang] = useState("eng");
+  const [searchInput, setSearchInput] = useState('');
+  const langList = ["eng", "kor", "ara","bre","ces","cym","deu","est","fin","fra","hrv","hun","ita","jpn","nld","per","pol","por","rus","slk","spa","srp","swe","tur","urd","zho"]
 
   function getList() {
     fetch("https://restcountries.com/v3.1/all", {
@@ -12,58 +15,92 @@ export default function RoomD() {
     .then(res => setList(res))
   }
 
+  const handleChangeLang = (e) => {
+    setLang(e.target.value);
+  }
+
+  const handleSearch = (e) => {
+    setSearchInput(e.target.value);
+  }
+
+
   useEffect(() => {
     getList();
   }, [])
 
-  
-  console.log(list);
 
   return (
+    <>
+      <link rel="stylesheet" href="/resources/css/roomD.css"></link>
     <div id="roomd_wrap">
-      <section class="notice">
-        <div class="page-title">
-              <div class="container">
-                  <h3>맘대로해</h3>
+      <section className="notice">
+        <div className="page-title">
+              <div className="container">
+                  <h3>리 스 트</h3>
               </div>
           </div>
 
           {/* <!-- board seach area --> */}
           <div id="board-search">
-              <div class="container">
-                  <div class="search-window">
-                      <div class="search-wrap">
-                          <label for="search" class="blind">공지사항 내용 검색</label>
-                          <input id="search" type="search" name="" placeholder="검색어를 입력해주세요." value="" />
-                          <button type="submit" class="btn btn-dark">검색</button>
-                      </div>
+              <div className="container">
+                  <div className="search-window">
+                      <div className="search-wrap">
+                          {/* <label for="search" className="blind">공지사항 내용 검색</label> */}
+                <input
+                  id="search"
+                  type="search"
+                  value={searchInput}
+                  placeholder="검색어를 입력해주세요."
+                  onChange={handleSearch}/>
+                {/* <button type="submit" className="btn btn-dark">검색</button> */}
+                <div>
+                <select className='btn btn-dark' onChange={handleChangeLang}>
+                  {langList.map((i,idx)=>{
+                    return (
+                      <option key={"option" + idx} value={i}>{i}</option>
+                    )
+                  })}
+                </select>
+              </div>
+              </div>
+              
                   </div>
               </div>
           </div>
         
         {/* <!-- board list area --> */}
           <div id="board-list">
-              <div class="container">
-                  <table class="board-table">
+              <div className="container">
+                  <table className="board-table">
                       <thead>
                       <tr>
-                          <th scope="col" class="th-num">번호</th>
-                          <th scope="col" class="th-title">국가 이름</th>
-                          <th scope="col" class="th-date">인구수</th>
+                          <th scope="col" className="th-num">NO</th>
+                          <th scope="col" className="th-title">국가 이름</th>
+                          <th scope="col" className="th-date">인구수</th>
                       </tr>
                       </thead>
               <tbody>
-                {list.map((i, idx) => {
+                {list
+                  .filter(item => {
+                    const officialName = lang === "eng" ? item.name.official : item.translations[lang].official;
+                    return officialName.toLowerCase().includes(searchInput.toLowerCase());
+                  })
+                  .map((i, idx) => {
                   return (
-                    <tr>
+                    <tr key={"number" + idx}>
                       <td>{idx+1 }</td>
-                    <th>
-                        <a href="#!">{i.name.common }</a>
+                      <th>
+                        {lang == "eng" ? 
+                          <a href="#!">{i.name.official }</a>
+                        : 
+                          <a href="#!">{i.translations[lang].official }</a>
+                        }
                     </th>
                     <td>{i.population.toLocaleString()}</td>
                 </tr>
                   )
                 }) }
+    {/* object.name, object['name'] */}
                     
                      
                       </tbody>
@@ -72,6 +109,7 @@ export default function RoomD() {
           </div>
 
       </section>
-    </div>
+      </div>
+      </>
   )
 }
