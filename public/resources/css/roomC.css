@@ -1,0 +1,39 @@
+#roomC_wrap {
+
+}
+
+#roomC_wrap .console_input {
+    width: 10px;
+    height: 0;
+    /* border: transparent; */
+    position: absolute;
+    top: 5%;
+}
+
+#roomC_wrap div#background {
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    height: calc(100vh - 43.78px);
+    padding: 1.5em;
+}
+
+#roomC_wrap div#background div#console {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid rgb(68, 68, 68);
+    width: 40em;
+    height: 30em;
+    padding: 0px 0.3em;
+    margin: 0px auto;
+    overflow-y: auto;
+}
+
+#roomC_wrap div#background div#console div.console_line {
+
+}
+
+#roomC_wrap div#background div#console span.console_line_word {
+    color: rgb(187, 187, 187);
+    font-size: 0.8em;
+    font-family: "Lucida Console";
+    word-break: break-word;
+}
