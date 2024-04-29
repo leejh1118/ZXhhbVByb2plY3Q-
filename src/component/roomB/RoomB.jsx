@@ -1,5 +1,4 @@
-
-import '../../../public/resources/css/roomB.css';
+import '../../styles/roomB.css';
 
 export default function RoomB() {
 
