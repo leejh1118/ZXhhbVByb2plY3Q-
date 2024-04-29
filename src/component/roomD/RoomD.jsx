@@ -8,7 +8,7 @@ function RoomD() {
     <>
       <Routes>
         <Route path="/" element={<List/>}></Route>
-        <Route path="/detail" element={<Detail/>}></Route>
+        <Route path="/detail/:name" element={<Detail/>}></Route>
       </Routes>
     </>
   )
