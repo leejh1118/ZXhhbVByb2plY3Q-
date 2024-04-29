@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function RoomD() {
   const [list, setList] = useState([]);
@@ -87,13 +88,13 @@ export default function RoomD() {
                   return (
                     <tr key={"number" + idx}>
                       <td>{idx+1 }</td>
-                      <th>
+                      <td>
                         {lang == "eng" ? 
-                          <a href={`https://restcountries.com/v3.1/name/${i.name.official }`}>{i.name.official }</a>
+                          <Link to={`/room-d/detail/${i.name.official }`}>{i.name.official }</Link>
                         : 
-                          <a href={`https://restcountries.com/v3.1/name/${i.name.official }`}>{i.translations[lang].official }</a>
+                          <Link to={`/room-d/detail/${i.translations[lang].official }`}>{i.translations[lang].official }</Link>
                         }
-                    </th>
+                    </td>
                     <td>{i.population.toLocaleString()}</td>
                 </tr>
                   )
