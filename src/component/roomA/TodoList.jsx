@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import '../../../public/resources/css/TodoList.css';
-
 
 export default function todoList() {
   

@@ -18,9 +18,9 @@
 }
 
 #roomB_wrap div.imgBox img#img_rd {
-    content: url(/public/resources/img/rubber_duck.jpg);
+    content: url(/img/rubber_duck.jpg);
 }
 
 #roomB_wrap div.imgBox img#img_rds {
-    content: url(/public/resources/img/rubber_duck_side.png);
+    content: url(/img/rubber_duck_side.png);
 }

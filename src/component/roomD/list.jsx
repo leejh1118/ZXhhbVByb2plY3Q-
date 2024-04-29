@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../../../public/resources/css/roomD.css';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
