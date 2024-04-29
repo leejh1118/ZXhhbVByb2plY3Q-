@@ -20,7 +20,7 @@
     height: 150px;
     flex-basis: 6em;
     text-align: center;
-    background: url(/public/resources/img/door.jpg) top;
+    background: url(/img/door.jpg) top;
     background-size: cover;
     padding-top: 1em;
     box-shadow: 0 3px 5px 2px #888;

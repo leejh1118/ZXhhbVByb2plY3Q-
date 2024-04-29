@@ -1,6 +1,7 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import TodoList from "./TodoList";
 import { useEffect } from "react";
+import TodoList from "./TodoList";
+import '../../styles/TodoList.css';
 
 export default function RoomA() {
   const navigate = useNavigate();

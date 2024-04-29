@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import List from "./list";
 import Detail from "./detail";
+import '../../styles/roomD.css';
 
 function RoomD() {
 
