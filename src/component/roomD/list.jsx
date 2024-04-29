@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import '../../../public/resources/css/roomD.css';
 import { useEffect } from 'react';
 
 export default function RoomD() {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import "../public/resources/css/App.css"
+import "./styles/App.css"
 import Main from "./component/main/Main.jsx";
 import RoomA from "./component/roomA/RoomA.jsx";
 import RoomB from "./component/roomB/RoomB.jsx";
