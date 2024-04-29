@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import '../../../public/resources/css/mainpage.css';
+
 
 export default function Main() {
   
   return (
     <>
-      <link rel="stylesheet" href="/resources/css/mainpage.css"></link>
     <div id="main_wrap">
       <h2 style={{textAlign: "center", paddingTop: "1em", fontWeight: "700"}}>{"< 408 >"}</h2>
       <div id="doors">
