@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-      <link rel="stylesheet" href="/resources/css/App.css"></link>
     <BrowserRouter basename='/backroom408'>
       <App />
     </BrowserRouter>
