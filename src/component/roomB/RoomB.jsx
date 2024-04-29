@@ -1,9 +1,10 @@
 
+import '../../../public/resources/css/roomB.css';
+
 export default function RoomB() {
 
   return (
     <>
-      <link rel="stylesheet" href="/resources/css/roomB.css"></link>
     <div id="roomB_wrap">
       <h1>Room B</h1>
       <div className="imgBox">
