@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 /* reset */
+body {
+  font-size: 18px;
+}
+
+a { text-decoration: none; color: #000; }
+
 #root { width: 100%; }
 
+#root > div[id*=wrap] {
+  /* #root 한단계 하위의 div에만 속성 적용 */
+  margin-top: 0.5em;
+}
+
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: "Noto Sans KR", sans-serif;
@@ -12,13 +23,6 @@
     font-weight: 400;
     font-style: normal;
 }
-
-body {
-    font-size: 18px;
-}
-
-a { text-decoration: none; color: #000; }
-
 
 /* loading */
 span.loader {
@@ -43,6 +47,37 @@ span.loader {
     color: rgba(255, 255, 255, 0.8);
   }
 }
+
+/* navigation bar */
+div#navigation_bar {
+  padding: 1em 2em;
+  background-color: #f6f8fa;
+  box-shadow: inset 0 -1px #d0d7de;
+  color: #1f2328;
+}
+
+div#navigation_bar a {
+  padding: 0.15em 0.5em;
+  cursor: pointer;
+  border-radius: 7px;
+}
+div#navigation_bar a:hover {
+  background-color: #d0d7de33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* logo */
 .logo {
