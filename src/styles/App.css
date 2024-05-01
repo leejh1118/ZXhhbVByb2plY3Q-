@@ -1,10 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
+/* variable */
+:root {
+  --border-color: #d0d7de;
+
+  --background-gray-color: #f6f8fa;
+  --background-gray-hover-color: #d0d7de33;
+}
+
+
 /* reset */
+body {
+  font-size: 18px;
+}
+
+a { text-decoration: none; color: #000; }
+input { font-size: 1em; font-weight: 300; }
+button { font-size: 1em; font-weight: 500; }
+
 #root { width: 100%; }
 
+#root > div[id*=wrap] {
+  /* #root 한단계 하위의 div에만 속성 적용 */
+  margin-top: 0.5em;
+}
+
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: "Noto Sans KR", sans-serif;
@@ -12,12 +34,6 @@
     font-weight: 400;
     font-style: normal;
 }
-
-body {
-    font-size: 18px;
-}
-
-a { text-decoration: none; color: #000; }
 
 
 /* loading */
@@ -43,6 +59,57 @@ span.loader {
     color: rgba(255, 255, 255, 0.8);
   }
 }
+
+
+/* navigation bar */
+div#navigation_bar {
+  padding: 1em 2em;
+  background-color: var(--background-gray-color);
+  box-shadow: inset 0 -1px var(--border-color);
+  color: #1f2328;
+}
+
+div#navigation_bar a {
+  padding: 0.15em 0.5em;
+  cursor: pointer;
+  border-radius: 7px;
+}
+div#navigation_bar a:hover {
+  background-color: var(--background-gray-hover-color);
+}
+
+
+/* elements */
+button.btn {
+  padding: 0.7em 1.25em;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  background-color: var(--background-gray-color);
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+div.table_box {
+  border-radius: 9px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+div.table_box div.table_info {
+  height: 2.75em;
+  padding: 0.7em 1em;
+  background-color: var(--background-gray-color);
+  box-shadow: inset 0 -1px var(--border-color);
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+
+
 
 /* logo */
 .logo {

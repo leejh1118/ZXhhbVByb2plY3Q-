@@ -51,6 +51,11 @@ export default function RoomC() {
       keyRef.current[e.keyCode] = false;
     }
 
+    // onkeydown, onkeyup 기능 해제
+    return(() => {
+      window.onkeydown = () => {};
+      window.onkeyup = () => {};
+    })
   }, [])
   
   // console 창 스크롤 하단으로 내림

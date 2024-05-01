@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./styles/App.css"
 import Main from "./component/main/Main.jsx";
 import RoomA from "./component/roomA/RoomA.jsx";
@@ -14,24 +13,17 @@ import RoomJ from "./component/roomJ/RoomJ.jsx";
 import RoomK from "./component/roomK/RoomK.jsx";
 import RoomL from "./component/roomL/RoomL.jsx";
 import RoomM from "./component/roomM/RoomM.jsx";
+import Navigation_bar from "./common/Navigation_bar.jsx";
 
 
 
 function App() {
-  const navigate = useNavigate();
   const location = useLocation();
-
-  const toPath = () => {
-    navigate(-1);
-  }
 
   return (
     <>
-      {location.pathname != "/" &&
-        <div style={{paddingLeft: "2em", paddingTop: "1em"}}>
-          <a onClick={() => toPath()} style={{cursor: "pointer"}}>← Back</a>
-        </div>
-      }
+      { location.pathname != "/" && <Navigation_bar /> }
+      
       <Routes>
         <Route path="/" element={<Main/>}></Route>
         <Route path="/room-a/*" element={<RoomA />}></Route>

@@ -48,44 +48,45 @@ export default function todoList() {
   return (
     <>
       <div className="todo_container">
-        <h1>Todo</h1>
+        <div id="todo_title_box">
+          <img src='https://cdn-icons-png.flaticon.com/512/654/654116.png' />
+          <h2>Todo</h2>
+          <span>{new Date().toLocaleDateString()}</span>
+        </div>
+
         <div id="inputField">
           <input type="text" id="todoInput" placeholder="할 일 추가하기"  value={input} onChange={(e) => handleInput(e.target.value)} onKeyDown={(e) => e.keyCode == 13 && handleList()}/>
-          <button type="button" className="btn addBtn" onClick={() => handleList()}>
-            <span></span>
-            <span></span>
-          </button>
+          <button type="button" className="btn addBtn" onClick={() => handleList()}>Add</button>
         </div>
-        <ul id="todoList">
-          
-        </ul>
-        <table className="table" id="table">
-          <colgroup>
-            <col style={{width:"33%"}}/>
-            <col style={{width:"33%"}}/>
-            <col style={{width:"33%"}}/>
-          </colgroup>
-          <thead>
-          </thead>
-          <tbody>
-            {list.map((item, idx) => {
-              return (
-                <tr key={"list" + idx}>
-                  <td style={{textAlign:"left"}}>{idx+1}</td>
-                  <td style={{textAlign:"center"}}>
-                    <span className='list_content'>{item}</span>
-                  </td>
-                  <td style={{textAlign:"right"}}>
-                    <button className='btn delBtn' onClick={() => remove(idx)}>
-                      <span></span>
-                      <span></span>
-                    </button>
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+
+        <div className='table_box'>
+          <div className='table_info'>
+            leejh1118 Merge pull request backroom408#15 from backroom408/leejh1118-patch-1
+          </div>
+          <table className="table" id="table">
+            <colgroup>
+              <col style={{width:"20%"}}/>
+              <col style={{width:"auto"}}/>
+              <col style={{width:"33%"}}/>
+            </colgroup>
+            <tbody>
+              {list.map((item, idx) => {
+                return (
+                  <tr key={"list" + idx}>
+                    <td style={{textAlign:"left"}}>📜 {idx + 1}</td>
+                    <td style={{textAlign:"left"}}>
+                      <span className='list_content'>{item}</span>
+                    </td>
+                    <td style={{textAlign:"right"}}>
+                      <button className='btn delBtn' onClick={() => remove(idx)}>Del</button>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+
       </div>
       </>
   );
